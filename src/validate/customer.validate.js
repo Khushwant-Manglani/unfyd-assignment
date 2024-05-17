@@ -16,7 +16,10 @@ const validateCustomer = asyncHandler((req, res, next) => {
     customerSchema.parse(req.body);
     next();
   } catch (err) {
-    throw new ApiError(400, "validation error");
+    throw new ApiError(
+      400,
+      "Validation error encountered while validating customer information."
+    );
   }
 });
 
